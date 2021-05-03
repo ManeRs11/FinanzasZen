@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <index/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import index from './components/index.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    index
   }
 }
 </script>
 
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Vonique";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
+}
+
+@font-face {
+  font-family: "Vonique";
+  src: local("Vonique"), url(./assets/fonts/vonique_92/Vonique92_D.otf) format("truetype");
 }
 </style>
