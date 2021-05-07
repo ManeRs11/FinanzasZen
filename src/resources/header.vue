@@ -12,7 +12,7 @@
               <b-navbar-nav class="ml-auto">
                 <b-nav-form>
                   <b-nav-item active href="#inicio">Inicio</b-nav-item>
-                  <b-nav-item href="#quees" class="animated fadeDown">¿Que es finanzas zen?</b-nav-item>
+                  <b-nav-item href="#">¿Que es Finanzas Zen?</b-nav-item>
                   <b-nav-item href="#">Temario</b-nav-item>
                   <b-nav-item href="#">Blog</b-nav-item>  
                 </b-nav-form>

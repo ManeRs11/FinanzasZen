@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <headn />
     <index/>
   </div>
 </template>
 
 <script>
+import headn from './resources/header.vue'
 import index from './components/index.vue'
 
 export default {
   name: 'App',
   components: {
+    headn,
     index
   }
 }
