@@ -2,7 +2,7 @@
   <div class="quees">
 
     <div style="padding-top: 60px;">
-      <h3> <strong>QUE ES FINANZAS ZEN</strong></h3>
+      <h3> <strong>¿QUE ES FINANZAS ZEN?</strong></h3>
 
       <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>

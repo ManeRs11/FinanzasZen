@@ -1,35 +1,35 @@
 <template>
   <div class="finzen">
 
-    <div style="padding-top: 140px; padding-bottom:40px">
-      <h3> <strong>SIMPLIFICA TUS INVERSIONES</strong></h3>
+    <div style="padding-top: 80px; padding-bottom:40px">
+      <h3> <strong>ORDENA TUS PRIORIDADES PARA GANAR MÁS</strong></h3>
     </div>
 
     <b-container class="circles">
       <b-row>
         <b-col>
           <div class="mb-3">
-            <b-avatar src="https://placekitten.com/300/300" size="14rem"></b-avatar>
+            <b-avatar src="./../assets/img/seguridad.jpeg" size="14rem"></b-avatar>
             <div class="footerCircle">
-              <h4>SEGURIDAD</h4>
+              <h4><strong>SEGURIDAD</strong></h4>
               <p>Con conocimiento para buscar alternativas para escoger</p>
             </div>
           </div>
         </b-col>
         <b-col>
           <div class="mb-3">
-            <b-avatar src="https://placekitten.com/300/300" size="14rem"></b-avatar>
+            <b-avatar src="./../assets/img/claridad.jpeg" size="14rem"></b-avatar>
             <div class="footerCircle">
-              <h4>CLARIDAD</h4>
+              <h4><strong>CLARIDAD</strong></h4>
               <p>Con herramientas, transparentes y gratuitas para comparar</p>
             </div>
           </div>
         </b-col>
         <b-col>
           <div class="mb-3">
-            <b-avatar src="https://placekitten.com/300/300" size="14rem"></b-avatar>
+            <b-avatar src="./../assets/img/confianza.jpeg" size="14rem"></b-avatar>
             <div class="footerCircle">
-              <h4>CONFIANZA</h4>
+              <h4><strong>CONFIANZA</strong></h4>
               <p>A traves de principios simples que te daran consistencia</p>
             </div>
           </div>
@@ -49,9 +49,10 @@ export default {
 <style scoped>
 
 .finzen {
-   background-image: url("./../assets/portada.png");
+   background-image: url("./../assets/img/portada.png");
+   background-repeat: no-repeat;
    color: #ffffff;
-
+  padding-bottom: 80px;
 }
 
 .circles {

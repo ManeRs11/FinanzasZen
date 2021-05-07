@@ -18,7 +18,7 @@ export default {
 <style>
 
 #app {
-  font-family: "Vonique";
+  font-family: "Montserrat";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -27,7 +27,7 @@ export default {
 }
 
 @font-face {
-  font-family: "Vonique";
-  src: local("Vonique"), url(./assets/fonts/vonique_92/Vonique92_D.otf) format("truetype");
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(./assets/fonts/Montserrat/Montserrat-Light.ttf) format("truetype");
 }
 </style>
