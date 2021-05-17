@@ -38,13 +38,13 @@
            dolorum debitis autem repudiandae!
       </p>
     </div>
-    
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'quees'
+  name: 'about'
 }
 </script>
 

@@ -9,7 +9,7 @@
 
     <div class="prioridades animated fadeInDown">
 
-      <div style="padding-top: 80px; padding-bottom:40px">
+      <div style="padding-top: 100px; padding-bottom:40px">
         <h3> <strong>ORDENA TUS PRIORIDADES PARA GANAR MÁS</strong></h3>
       </div>
 
@@ -20,7 +20,7 @@
               <b-avatar src="./../assets/img/seguridad.jpeg" size="14rem"></b-avatar>
               <div class="footerCircle">
                 <h4><strong>SEGURIDAD</strong></h4>
-                <p>Con conocimiento para buscar alternativas para escoger</p>
+                <p>Con conocimiento para buscar <br> alternativas para escoger</p>
               </div>
             </div>
           </b-col>
@@ -29,7 +29,7 @@
               <b-avatar src="./../assets/img/claridad.jpeg" size="14rem"></b-avatar>
               <div class="footerCircle">
                 <h4><strong>CLARIDAD</strong></h4>
-                <p>Con herramientas, transparentes y gratuitas para comparar</p>
+                <p>Con herramientas transparentes <br> y gratuitas para comparar</p>
               </div>
             </div>
           </b-col>
@@ -38,7 +38,7 @@
               <b-avatar src="./../assets/img/confianza.jpeg" size="14rem"></b-avatar>
               <div class="footerCircle">
                 <h4><strong>CONFIANZA</strong></h4>
-                <p>A traves de principios simples que te daran consistencia</p>
+                <p>A través de principios simples <br> que te darán consistencia</p>
               </div>
             </div>
           </b-col>
@@ -46,7 +46,14 @@
       </b-container>    
       
     </div>
-    
+
+    <div class="webinar animated fadeInDown">
+      <div style="padding-top: 100px; padding-bottom:40px">
+          <h3> <strong>WEBINAR PARA INICIARSE COMO INVERSIONISTA</strong></h3> <br>
+          <h3> <strong>EN LA BOLSA MEXICANA DE VALORES</strong></h3>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -60,6 +67,7 @@ export default {
 </script>
 
 <style scoped>
+
 .simplifica .portada {
   width: 1024px;
 }
