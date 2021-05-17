@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import headn from './resources/header.vue'
+import headn from './resources/headn.vue'
 import index from './components/index.vue'
 
 export default {
