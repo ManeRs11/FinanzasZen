@@ -11,10 +11,12 @@
              <b-collapse id="nav-collapse" is-nav>              
               <b-navbar-nav class="ml-auto">
                 <b-nav-form>
-                  <b-nav-item active href="#inicio">Inicio</b-nav-item>
-                  <b-nav-item href="#about">¿Que es Finanzas Zen?</b-nav-item>
-                  <b-nav-item href="#">Temario</b-nav-item>
-                  <b-nav-item href="#">Blog</b-nav-item>  
+
+                  <b-nav-item><router-link to="/"><strong>Inicio</strong></router-link></b-nav-item>
+                  <b-nav-item><router-link to="/about"><strong>¿Que es Finanzas Zen?</strong></router-link></b-nav-item>
+                  <b-nav-item><router-link to="/course"><strong>Temario</strong></router-link></b-nav-item>
+                  <b-nav-item><router-link to="/blog"><strong>Blog</strong></router-link></b-nav-item>
+                  
                 </b-nav-form>
               </b-navbar-nav>
              </b-collapse>

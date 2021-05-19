@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <div class="prioridades animated fadeInDown">
+    <div class="prioridades animated fadeInUp">
 
       <div style="padding-top: 100px; padding-bottom:40px">
         <h3> <strong>ORDENA TUS PRIORIDADES PARA GANAR MÁS</strong></h3>
@@ -17,7 +17,7 @@
         <b-row>
           <b-col>
             <div class="mb-3">
-              <b-avatar src="./../assets/img/seguridad.jpeg" size="14rem"></b-avatar>
+              <b-avatar src="http://localhost:8080/img/seguridad.jpeg" size="14rem"></b-avatar>
               <div class="footerCircle">
                 <h2><strong>SEGURIDAD</strong></h2>
                 <h5>Con conocimiento para buscar <br> alternativas para escoger</h5>
@@ -87,7 +87,7 @@
       </div>
     </div>
 
-    <div class="include animated fadeInDown">
+    <div class="include animated fadeInUp">
 
       <div style="padding-top: 70px;">
         
@@ -146,7 +146,7 @@
                       <h3>FACEBOOK</h3>
                     </div>
                     <div class="subdata">
-                      <a :href="facebook" target="_blank">{{mail}}</a>
+                      <a :href="facebook" target="_blank">{{facebook}}</a>
                     </div>
                   </b-col>
                   

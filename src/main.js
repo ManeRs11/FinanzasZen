@@ -8,12 +8,18 @@ import 'vue2-animate/dist/vue2-animate.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+// Import Vue-Router
+import VueRouter from 'vue-router'
+import router from './router'
+
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+  router,
+  render: h => h(App)
 }).$mount('#app')
