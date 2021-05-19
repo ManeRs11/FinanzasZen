@@ -19,8 +19,8 @@
             <div class="mb-3">
               <b-avatar src="./../assets/img/seguridad.jpeg" size="14rem"></b-avatar>
               <div class="footerCircle">
-                <h4><strong>SEGURIDAD</strong></h4>
-                <p>Con conocimiento para buscar <br> alternativas para escoger</p>
+                <h2><strong>SEGURIDAD</strong></h2>
+                <h5>Con conocimiento para buscar <br> alternativas para escoger</h5>
               </div>
             </div>
           </b-col>
@@ -28,8 +28,8 @@
             <div class="mb-3">
               <b-avatar src="./../assets/img/claridad.jpeg" size="14rem"></b-avatar>
               <div class="footerCircle">
-                <h4><strong>CLARIDAD</strong></h4>
-                <p>Con herramientas transparentes <br> y gratuitas para comparar</p>
+                <h2><strong>CLARIDAD</strong></h2>
+                <h5>Con herramientas transparentes <br> y gratuitas para comparar</h5>
               </div>
             </div>
           </b-col>
@@ -37,8 +37,8 @@
             <div class="mb-3">
               <b-avatar src="./../assets/img/confianza.jpeg" size="14rem"></b-avatar>
               <div class="footerCircle">
-                <h4><strong>CONFIANZA</strong></h4>
-                <p>A través de principios simples <br> que te darán consistencia</p>
+                <h2><strong>CONFIANZA</strong></h2>
+                <h5>A través de principios simples <br> que te darán consistencia</h5>
               </div>
             </div>
           </b-col>
