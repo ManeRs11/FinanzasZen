@@ -1,19 +1,25 @@
 <template>
   <div id="app">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
     <headn />
-    <index/>
+    <index />
+    <footern />
+    
   </div>
 </template>
 
 <script>
 import headn from './resources/headn.vue'
 import index from './components/index.vue'
+import footern from './resources/footern.vue'
 
 export default {
   name: 'App',
   components: {
     headn,
-    index
+    index,
+    footern
   }
 }
 </script>
