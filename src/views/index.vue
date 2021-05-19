@@ -9,7 +9,7 @@
 
     <div class="prioridades animated fadeInUp">
 
-      <div style="padding-top: 100px; padding-bottom:40px">
+      <div style="padding-top: 100px;">
         <h3> <strong>ORDENA TUS PRIORIDADES PARA GANAR MÁS</strong></h3>
       </div>
 
