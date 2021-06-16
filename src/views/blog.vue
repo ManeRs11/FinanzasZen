@@ -5,11 +5,10 @@
 
       <div style="padding: 20px;">
         <h1><strong>BLOG</strong></h1>
-        <hr>
       </div>
 
       <div style="padding: 20px;">
-        <h1 style="font-size: 100px"><strong>404</strong></h1>
+        <h1 style="font-size: 30px"><strong>Estamos renovando el Blog</strong></h1><br>
         <img width="30%" src="./../assets/logos/zenCircle.jpg" alt="">
       </div>
     </div>

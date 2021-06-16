@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+// Wizzard Vue 
+import VueFormWizard from 'vue-form-wizard'
+import 'vue-form-wizard/dist/vue-form-wizard.min.css'
+
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'vue2-animate/dist/vue2-animate.min.css'
 
@@ -16,6 +20,7 @@ import router from './router'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
+Vue.use(VueFormWizard)
 
 Vue.config.productionTip = false
 

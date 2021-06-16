@@ -61,10 +61,7 @@
               <b-col>¿Como empezar con menos de $100,000 MXN?</b-col>
               <b-col>¿Cuando comprar y vender?</b-col>
             </b-row>
-            <b-row style="padding-top:23px">
-              <b-col>¿Donde encuentro un bróker?</b-col>
-              <b-col>¿Cuando comprar y vender?</b-col>
-            </b-row>
+            
             <b-row style="padding-top:23px">
               <b-col>¿Donde encuentro un bróker?</b-col>
               <b-col>¿Como armo mi portafolio?</b-col>
@@ -75,7 +72,7 @@
             </b-row>
 
             <div style="padding-top: 23px;">
-              <b-button class="inscribete rounded-pill" variant="primary" size="lg">
+              <b-button class="inscribete rounded-pill" variant="primary" size="lg" v-b-modal.modal-1>
                 <strong>
                   ¡ INSCRÍBETE <br> AQUÍ ! 
                 </strong>
@@ -196,23 +193,30 @@
 
       </div>
     </div>
+
+
+    <div class="floatModals">
+      <register />
+    </div>
   </div>
 </template>
 
 <script>
 
+import register from '../components/register.vue'
 export default {
   name: 'index',
+  components: {
+    register
+  },
   data: function () {
     return {
-      whatsappNum: '+5214611803146',
-      whatsappNumParse: '+52 1 (461) 180 3146',
+      whatsappNum: '+5214423475712',
+      whatsappNumParse: '+52 1 (442) 347 5712',
       whatsappTxt: 'Hola estoy interesado en tomar el curso de Finanzas Zen',
       mail: 'contacto@finanzaszen.com',
       facebook: 'https://www.facebook.com/finanzaszen'
     }
-  },
-  components: {
   }
 }
 </script>
