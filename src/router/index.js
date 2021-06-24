@@ -38,6 +38,12 @@ const routes = [
     name: 'Blog',
     component: () => import('../views/blog.vue'),
     meta: { title: 'Blog' }
+  },
+  {
+    path: '/payment/:id',
+    name: 'Payment',
+    component: () => import('../views/payment.vue'),
+    meta: { title: 'Payment' }
   }
 ]
 

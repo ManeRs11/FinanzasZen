@@ -31,6 +31,10 @@ import { firestorePlugin } from 'vuefire'
 import moment from "moment";
 import VueMomentJS from "vue-momentjs";
 
+// Lodash
+import VueLodash from 'vue-lodash'
+import lodash from 'lodash'
+
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
@@ -42,6 +46,8 @@ Vue.use(VeeValidate)
 Vue.use(firebase)
 Vue.use(firestorePlugin)
 Vue.use(VueMomentJS, moment);
+Vue.use(VueLodash, {lodash: lodash})
+
 
 Vue.config.productionTip = false
 

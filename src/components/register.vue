@@ -11,7 +11,7 @@
 
                 <tab-content title="Datos Personales">
                     <div style="padding-bottom: 20px; font-weight: bold;">Completa tu inscripción para que empieces a generar ingresos financieros de manera clara, simple y ordenada</div>
-
+    
                         <form>
 
                             <div style="padding-bottom: 20px;">
@@ -96,8 +96,8 @@
                                 <div style="font-size: 17px; padding-bottom: 10px;"> <strong>Desglose</strong> </div>
                                 <div>
                                     1 Pago <code>$1713.00</code>  IVA 16% = <code>$1987.08</code> <br>
-                                    2 pagos <code>$942.12</code> IVA 16% = <code>$1092.8592</code> x 2 <br>
-                                    3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 <br>
+                                    2 pagos <code>$942.12</code> IVA 16% = <code>$1092.8592</code> x 2 MSI <br>
+                                    3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 MSI <br>
                                 </div>
                             </div>
 
@@ -175,9 +175,7 @@ var firebaseConfig = {
   appId: "1:652871503783:web:065da82fd754e352107082",
   measurementId: "G-MB6PK41ME8"
 };
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 const db = firebase.firestore()
 
 export default {
@@ -191,7 +189,6 @@ export default {
   },
   methods: {
     async init () {
-        console.log('HOY: ', this.$moment().format('LLLL'))
     },
     async onComplete () {
         this.showModall = false
@@ -227,8 +224,8 @@ export default {
           selected: 'first',
           options: [
             { text: 'Pago Contado:         $1,987.08' , value: 'first' },
-            { text: 'Pago Cargo 2 meses:   $1,092.85',  value: 'second' },
-            { text: 'Pago Cargo 3 meses:   $808.58',    value: 'third' }
+            { text: 'Pago Cargo 2 MSI:   $1,092.85',  value: 'second' },
+            { text: 'Pago Cargo 3 MSI:   $808.58',    value: 'third' }
           ]
       }
   }
