@@ -8,7 +8,7 @@
       </div>
 
       <div style="padding: 20px;">
-        <h1 style="font-size: 30px"><strong>Estamos renovando el Blog</strong></h1><br>
+        <h1 style="font-size: 30px"><strong>Estamos renovando el blog</strong></h1><br>
         <img width="30%" src="./../assets/logos/zenCircle.jpg" alt="">
       </div>
     </div>

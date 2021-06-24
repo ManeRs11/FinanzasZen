@@ -99,15 +99,15 @@
 
 
         <div style="padding-top: 23px;">
-          <b-button class="inscribete rounded-pill" variant="primary" size="lg" v-b-modal.modal-1>
+          <b-button class="inscribete rounded-pill" variant="primary" size="lg" @click="showModal()">
             <strong>
               ¡ INSCRÍBETE <br> AQUÍ ! 
             </strong>
           </b-button>
         </div>
 
-        <div class="floatModals">
-          <register />
+        <div v-if="modalSh" class="floatModals">
+          <register v-bind:modal="modalSh" />
         </div>
 
       
@@ -122,6 +122,24 @@
 import register from '../components/register.vue'
 export default {
   name: 'course',
+  data: function () {
+    return {
+      modalSh: false
+    }
+  },
+  methods: {
+    async showModal () {
+      if (!this.modalSh) {
+        this.modalSh = true
+      } else {
+        this.modalSh = await false
+        this.modalSh = await true
+      }
+    },
+    async hideModal () {
+      this.modalSh = false
+    }
+  },
   components: {
     register
   }

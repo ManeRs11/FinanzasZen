@@ -16,11 +16,20 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueRouter from 'vue-router'
 import router from './router'
 
+// Import Axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+// Vuelidate
+import Vuelidate from 'vuelidate'
+
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
 Vue.use(VueFormWizard)
+Vue.use(VueAxios, axios)
+Vue.use(Vuelidate)
 
 Vue.config.productionTip = false
 

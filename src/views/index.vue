@@ -72,7 +72,7 @@
             </b-row>
 
             <div style="padding-top: 23px;">
-              <b-button class="inscribete rounded-pill" variant="primary" size="lg" v-b-modal.modal-1>
+              <b-button class="inscribete rounded-pill" variant="primary" size="lg" @click="showModal()">
                 <strong>
                   ¡ INSCRÍBETE <br> AQUÍ ! 
                 </strong>
@@ -195,8 +195,8 @@
     </div>
 
 
-    <div class="floatModals">
-      <register />
+    <div v-if="modalSh" class="floatModals">
+      <register v-bind:modal="modalSh" />
     </div>
   </div>
 </template>
@@ -209,8 +209,22 @@ export default {
   components: {
     register
   },
+  methods: {
+    async showModal () {
+      if (!this.modalSh) {
+        this.modalSh = true
+      } else {
+        this.modalSh = await false
+        this.modalSh = await true
+      }
+    },
+    async hideModal () {
+      this.modalSh = false
+    }
+  },
   data: function () {
     return {
+      modalSh: false,
       whatsappNum: '+5214423475712',
       whatsappNumParse: '+52 1 (442) 347 5712',
       whatsappTxt: 'Hola estoy interesado en tomar el curso de Finanzas Zen',

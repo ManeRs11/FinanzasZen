@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <b-modal size="lg" ref="modal" id="modal-1" hide-footer hide-header>
+    <b-modal size="lg" ref="modal" id="modal" v-model="showModall" data-backdrop=”static” data-keyboard=”false” tabindex=”-1″ hide-footer hide-header>
         <div style="padding-top: 20px;">
             
             <form-wizard ref="wizard"
@@ -13,21 +13,25 @@
 
                     <div style="padding-bottom: 20px; font-weight: bold;">Completa tu inscripción para que empieces a generar ingresos financieros de manera clara, simple y ordenada</div>
 
-                    <div style="padding-bottom: 20px;">
-                        <b-form-input v-model="nombre" placeholder="Ingresa tu nombre completo"></b-form-input>
-                        <div class="mt-2">Nombre: <span style="color: #e83e8c">{{ nombre }}</span> </div>
-                    </div>
+                        <form>
+
+                            <div style="padding-bottom: 20px;">
+                                <b-form-input v-model="usuario.nombre" placeholder="Ingresa tu nombre completo"></b-form-input>
+                                <div class="mt-2"><span style="color: red;">*</span> Nombre: <span style="color: #e83e8c">{{ usuario.nombre }}</span> </div>
+                            </div>
+                            
+                            <div style="padding-bottom: 20px;">
+                                <b-form-input v-model="usuario.email" placeholder="Ingresa tu correo electrónico"></b-form-input>
+                                <div class="mt-2"><span style="color: red;">*</span> Correo: <span style="color: #e83e8c">{{ usuario.email }}</span> </div>
+                            </div>
+
+                            <div style="padding-bottom: 20px;">
+                                <b-form-input v-model="usuario.telephone" placeholder="Ingresa tu número de WhatsApp"></b-form-input>
+                                <div class="mt-2"><span style="color: red;">*</span> WhatsApp: <span style="color: #e83e8c">{{ usuario.telephone }}</span> </div>
+                            </div>
+
+                        </form>
                     
-                    <div style="padding-bottom: 20px;">
-                        <b-form-input v-model="email" placeholder="Ingresa tu correo electrónico"></b-form-input>
-                        <div class="mt-2">Correo: <span style="color: #e83e8c">{{ email }}</span> </div>
-                    </div>
-
-                    <div style="padding-bottom: 20px;">
-                        <b-form-input v-model="telephone" placeholder="Ingresa tu número de WhatsApp"></b-form-input>
-                        <div class="mt-2">WhatsApp: <span style="color: #e83e8c">{{ telephone }}</span> </div>
-                    </div>
-
                     <span style="font-weight: bold;">Tus datos privados son utilizados únicamente para enviarte información de valor y apoyarte en caso de dudas.</span>
 
                 </tab-content>
@@ -66,7 +70,7 @@
                                 <div>
                                     1 Pago <code>$1713.00</code>  IVA 16% = <code>$1987.08</code> <br>
                                     2 pagos <code>$942.12</code> IVA 16% = <code>$1092.8592</code> x 2 <br>
-                                    3 Pagos <code>$628.07</code> IVA 16% = <code>$728.56</code> x 3 <br>
+                                    3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 <br>
                                 </div>
                             </div>
 
@@ -93,24 +97,7 @@
                     </div>
                 </tab-content>
 
-                <!--tab-content title="Prosperar">
-                    <div style="text-align: center;">
-                        Para recibir el acceso realiza el siguiente pago de manera segura por PayPal <br>
-                    </div>
-                    <div style="text-align: center; font-size: 33px; padding-top: 20px; padding-bottom: 30px; color: green;">
-                        ${{costo}}. <span style="font-size:25px;">00</span>
-                    </div> 
-                    <div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="QSL8E9LMB3JS2">
-                            <input type="image" style="display:block; margin:0 auto" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-                        </form>
-                    </div>
-                </tab-content -->
-
-                <template slot="footer" scope="props">
+                <template slot="footer" slot-scope="props">
                     <div class=wizard-footer-left>
                         <wizard-button  
                             v-if="props.activeTabIndex > 0 && !props.isLastStep" 
@@ -147,8 +134,11 @@
 </template>
 
 <script>
+
+// import correo from '../services/correos.js'
 export default {
   name: 'register',
+  props: ['modal'],
   mounted () {
       this.init()
   },
@@ -156,9 +146,6 @@ export default {
     async init () {
     },
     async onComplete () {
-        this.$refs['wizard'].reset()
-        this.$refs['modal'].hide()      
-        location.reload();  
     },
     async nextTabb ( index ) {
         if ( index === 0 ) {
@@ -171,15 +158,17 @@ export default {
   },
   data: function () {
       return {
-          costo: 10,
-          nombre: '',
-          email: '',
-          telephone: '',
+          showModall: this.modal,
+          usuario: {
+            nombre: '',
+            email: '',
+            telephone: '',
+          },
           selected: 'first',
           options: [
             { text: 'Pago Contado:         $1,987.08' , value: 'first' },
-            { text: 'Pago Cargo 2 meses:   $1,092.85', value: 'second' },
-            { text: 'Pago Cargo 3 meses:   $728.56', value: 'third' }
+            { text: 'Pago Cargo 2 meses:   $1,092.85',  value: 'second' },
+            { text: 'Pago Cargo 3 meses:   $808.58',    value: 'third' }
           ]
       }
   }
