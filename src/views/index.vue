@@ -17,7 +17,7 @@
         <b-row>
           <b-col>
             <div class="mb-3">
-              <b-avatar src="http://localhost:8080/img/seguridad.jpeg" size="14rem"></b-avatar>
+              <b-avatar src="https://firebasestorage.googleapis.com/v0/b/finanzaszen-e2129.appspot.com/o/zen1.jpeg?alt=media&token=9dce5050-55c5-433c-8703-483cb2285e5f" size="14rem"></b-avatar>
               <div class="footerCircle">
                 <h2><strong>SEGURIDAD</strong></h2>
                 <h5>Con conocimiento para buscar <br> alternativas para escoger</h5>
@@ -26,7 +26,7 @@
           </b-col>
           <b-col>
             <div class="mb-3">
-              <b-avatar src="./../assets/img/claridad.jpeg" size="14rem"></b-avatar>
+              <b-avatar src="https://firebasestorage.googleapis.com/v0/b/finanzaszen-e2129.appspot.com/o/zen2.jpeg?alt=media&token=a26c24e2-bc56-4b8d-909c-35cf31d431da" size="14rem"></b-avatar>
               <div class="footerCircle">
                 <h2><strong>CLARIDAD</strong></h2>
                 <h5>Con herramientas transparentes <br> y gratuitas para comparar</h5>
@@ -35,7 +35,7 @@
           </b-col>
           <b-col>
             <div class="mb-3">
-              <b-avatar src="./../assets/img/confianza.jpeg" size="14rem"></b-avatar>
+              <b-avatar src="https://firebasestorage.googleapis.com/v0/b/finanzaszen-e2129.appspot.com/o/zen3.jpeg?alt=media&token=dfb81356-aea8-4ecf-bd86-b13f98bbb312" size="14rem"></b-avatar>
               <div class="footerCircle">
                 <h2><strong>CONFIANZA</strong></h2>
                 <h5>A través de principios simples <br> que te darán consistencia</h5>

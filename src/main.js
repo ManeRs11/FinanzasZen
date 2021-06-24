@@ -20,8 +20,17 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-// Vuelidate
-import Vuelidate from 'vuelidate'
+// Vee Validate
+import VeeValidate from 'vee-validate'
+
+// Firebase
+import firebase from 'firebase'
+import { firestorePlugin } from 'vuefire'
+
+// Moment Vue
+import moment from "moment";
+import VueMomentJS from "vue-momentjs";
+
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
@@ -29,7 +38,10 @@ Vue.use(IconsPlugin)
 Vue.use(VueRouter)
 Vue.use(VueFormWizard)
 Vue.use(VueAxios, axios)
-Vue.use(Vuelidate)
+Vue.use(VeeValidate)
+Vue.use(firebase)
+Vue.use(firestorePlugin)
+Vue.use(VueMomentJS, moment);
 
 Vue.config.productionTip = false
 
