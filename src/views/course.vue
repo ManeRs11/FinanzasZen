@@ -84,16 +84,6 @@
                   </strong>
                 </p>
             </b-col>
-
-
-            <b-col>
-                <strong class="title"></strong> <br><br>
-                <p> 
-                  <strong>
-                                      
-                  </strong>
-                </p>
-            </b-col>
         </b-row>
 
 
@@ -147,6 +137,19 @@ export default {
 </script>
 
 <style scoped>
+
+@media (max-width:768px) and (orientation : portrait) {
+  .course {
+    padding-top: 100px !important;
+    width: 440px !important;
+  }
+  .course .inscribete {
+    width: 90% !important;
+  }
+  .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    padding-right: 35px;
+  }
+}
 
 .course {
   padding-top: 140px;
