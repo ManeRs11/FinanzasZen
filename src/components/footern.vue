@@ -17,8 +17,8 @@
         <hr>
         
         <b-row style="padding-top:23px">
-            <b-col style="text-align: left;"> <strong>© {{new Date().getFullYear()}} Alan Macías Pacheco – Todos los Derechos Reservados</strong> </b-col>
-            <b-col style="text-align: right;"> Finanzas Zen ® </b-col>
+            <b-col class="derechos" style="text-align: left;"> <strong>© {{new Date().getFullYear()}} Alan Macías Pacheco – Todos los Derechos Reservados</strong> </b-col>
+            <b-col class="derechos" style="text-align: right;"> Finanzas Zen ® </b-col>
         </b-row>
 
       </div>
@@ -45,8 +45,11 @@ export default {
       width: 440px !important;
   }
   .footer ul {
-      width: 85% !important;
+      width: 75% !important;
   }
+  .footer .derechos {
+    font-size: 11px !important;
+}
 }
 
 
@@ -54,6 +57,9 @@ export default {
     background-color: #009ca4;
     color: #ffffff;
     font-weight: bolder;
+}
+.footer .derechos {
+    font-size: 16px;
 }
 .footer .info {
     padding-top: 70px;

@@ -121,7 +121,7 @@
     </div>
 
     <div class="contact animated fadeInDown">
-      <div class="container" style="padding-top: 70px; padding-button: 70px;">
+      <div class="container block">
         
 
         <b-row style="padding-top:23px">
@@ -297,12 +297,25 @@ export default {
     .include .row .col {
       padding-bottom: 30px !important;
     }
+    .include .info {
+      padding: 70px !important;
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+    }
+    .include .ebook {
+      padding-top: 15px !important;
+    }
 
     .contact {
       width: 440px !important;
     }
+    .contact .block {
+      padding: 50px !important;
+      padding-top: 20px !important;
+      padding-bottom: 0px !important;
+    }
     .contact .logo {
-      width: 390px !important;
+      width: 320px !important;
     }
     .contact .alan {
       width: 100% !important; 
@@ -395,6 +408,10 @@ export default {
 
 .contact {
   padding-bottom: 10px;
+}
+.contact .block {
+  padding-top: 70px; 
+  padding-bottom: 30px;
 }
 .contact .title {
   text-align: left;
