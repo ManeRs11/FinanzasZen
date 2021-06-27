@@ -5,7 +5,7 @@
         <b-navbar fixed="top" toggleable="lg" type="info" variant="info" class="border-bottom">
           <div class="container">
             <b-navbar-brand href="#">
-              <img src="./../assets/logos/FinanzazZenLogo.png" style="width: 222px;" alt="">
+              <img src="./../assets/logos/FinanzazZenLogo.png" class="logo" alt="">
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
              <b-collapse id="nav-collapse" is-nav>              
@@ -15,7 +15,7 @@
                   <b-nav-item><router-link to="/"><strong>Inicio</strong></router-link></b-nav-item>
                   <b-nav-item><router-link to="/about"><strong>¿Que es Finanzas Zen?</strong></router-link></b-nav-item>
                   <b-nav-item><router-link to="/course"><strong>Temario</strong></router-link></b-nav-item>
-                  <b-nav-item><router-link to="/blog"><strong>Blog</strong></router-link></b-nav-item>
+                  <!-- b-nav-item><router-link to="/blog"><strong>Blog</strong></router-link></b-nav-item -->
                   
                 </b-nav-form>
               </b-navbar-nav>
@@ -35,6 +35,25 @@ export default {
 </script>
 
 <style scoped>
+
+@media (max-width:768px) and (orientation : portrait) {
+  .logo {
+    width: 140px !important;
+  }
+  .form-inline {
+    display: block !important;
+  }
+}
+
+
+.navbar-toggler {
+  border: 1px solid #1d1d1d45; 
+  color: #000000 !important;
+}
+
+.logo {
+  width: 222px;
+}
 .bg-info {
     background-color: #ffffff !important;
     color: #012d33 !important;

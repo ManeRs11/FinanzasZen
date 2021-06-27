@@ -6,10 +6,11 @@
         <div style="padding-bottom: 20px;">
             <ul class="social-menu"> 
                 <li><a href="https://facebook.com/"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                <!-- li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li -->
+                <li><a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a></li> 
                 <li><a href="https://instagram.com/"><i class="fab fa-instagram"></i></a></li> 
                 <li><a href="https://youtube.com/"><i class="fab fa-youtube"></i></a></li>
-                <li><a href="https://whatsapp.com/"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a :href="'https://wa.me/'+ whatsappNum +'?text=' + whatsappTxt " target="_blank"><i class="fab fa-whatsapp"></i></a></li>
             </ul>
         </div>
 
@@ -26,11 +27,28 @@
 
 <script>
 export default {
-  name: 'footern'
+  name: 'footern',
+  data: function () {
+      return {
+          whatsappNum: '+5214423475712',
+          whatsappNumParse: '+52 1 (442) 347 5712',
+          whatsappTxt: 'Hola estoy interesado en tomar el curso de Finanzas Zen',
+      }
+  }
 }
 </script>
 
 <style scoped>
+
+@media (max-width:768px) and (orientation : portrait) {
+  .footer {
+      width: 440px !important;
+  }
+  .footer ul {
+      width: 85% !important;
+  }
+}
+
 
 .footer {
     background-color: #009ca4;

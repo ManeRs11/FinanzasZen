@@ -2,42 +2,42 @@
   <div id="inicio" class="index">
 
     <div class="simplifica animated fadeInDown">
-      <div style="padding-top: 150px;">
+      <div class="block">
         <img class="portada" src="./../assets/img/simplifica.png" alt="">
       </div>
     </div>
 
     <div class="prioridades animated fadeInUp">
 
-      <div style="padding-top: 100px;">
-        <h3> <strong>ORDENA TUS PRIORIDADES PARA GANAR MÁS</strong></h3>
+      <div>
+        <h3 class="title"><strong>ORDENA TUS PRIORIDADES PARA GANAR MÁS</strong></h3>
       </div>
 
       <b-container class="circles">
         <b-row>
           <b-col>
-            <div class="mb-3">
+            <div class="mb-2">
               <b-avatar src="https://firebasestorage.googleapis.com/v0/b/finanzaszen-e2129.appspot.com/o/zen1.jpeg?alt=media&token=9dce5050-55c5-433c-8703-483cb2285e5f" size="14rem"></b-avatar>
               <div class="footerCircle">
-                <h2><strong>SEGURIDAD</strong></h2>
+                <h2 class="subtitle"><strong>SEGURIDAD</strong></h2>
                 <h5>Con conocimiento para buscar <br> alternativas para escoger</h5>
               </div>
             </div>
           </b-col>
           <b-col>
-            <div class="mb-3">
+            <div class="mb-2">
               <b-avatar src="https://firebasestorage.googleapis.com/v0/b/finanzaszen-e2129.appspot.com/o/zen2.jpeg?alt=media&token=a26c24e2-bc56-4b8d-909c-35cf31d431da" size="14rem"></b-avatar>
               <div class="footerCircle">
-                <h2><strong>CLARIDAD</strong></h2>
+                <h2 class="subtitle"><strong>CLARIDAD</strong></h2>
                 <h5>Con herramientas transparentes <br> y gratuitas para comparar</h5>
               </div>
             </div>
           </b-col>
           <b-col>
-            <div class="mb-3">
+            <div class="mb-2">
               <b-avatar src="https://firebasestorage.googleapis.com/v0/b/finanzaszen-e2129.appspot.com/o/zen3.jpeg?alt=media&token=dfb81356-aea8-4ecf-bd86-b13f98bbb312" size="14rem"></b-avatar>
               <div class="footerCircle">
-                <h2><strong>CONFIANZA</strong></h2>
+                <h2 class="subtitle"><strong>CONFIANZA</strong></h2>
                 <h5>A través de principios simples <br> que te darán consistencia</h5>
               </div>
             </div>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="webinar animated fadeInDown">
-      <div style="padding-top: 70px; padding-bottom:40px">
+      <div class="block">
           <h3> 
             <strong class="title">
               WEBINAR PARA INICIARSE COMO INVERSIONISTA <br>
@@ -66,6 +66,7 @@
               <b-col>¿Donde encuentro un bróker?</b-col>
               <b-col>¿Como armo mi portafolio?</b-col>
             </b-row>
+
             <b-row style="padding-top:23px">
               <b-col>¿Herramientas para elegir una inversión?</b-col>
               <b-col>¿Como registro mis inversiones para mejorar?</b-col>
@@ -181,7 +182,7 @@
           </b-col>
           <b-col>
             <div>
-              <img style="width: 130%; float: right;" src="./../assets/img/contacto.png" alt="">
+              <img class="alan" src="./../assets/img/contacto.png" alt="">
             </div>
           </b-col>
         </b-row>
@@ -232,13 +233,101 @@ export default {
 
 <style scoped>
 
+
+@media (max-width:768px) and (orientation : portrait) {
+    .simplifica .portada {
+      padding: 0px 0px 0px 30px !important;
+      width: 410px !important;
+      padding-bottom: 30px !important;
+    }
+    .simplifica .block {
+      padding-top: 100px !important;
+    }
+
+
+    .prioridades {
+      background-image: url("./../assets/img/portada.png");
+      background-repeat: no-repeat;
+      color: #ffffff;
+      padding-top: 30px !important;
+      padding-bottom: 0px !important;
+      width: 440px !important;
+    }
+    .prioridades .circles {
+      padding-top: 10px !important;
+    }
+    .prioridades .title {
+      font-size: 21px !important;
+    }
+    .prioridades .subtitle {
+      font-size: 20px !important;
+    }
+    .prioridades .footerCircle {
+      padding-top: 30px !important;
+    }
+
+
+    
+    .webinar {
+      width: 440px !important;
+    }
+    .webinar .block {
+      padding-top: 40px !important; 
+      padding-bottom: 40px !important;
+    }
+    .webinar .title {
+      font-size: 20px !important;
+    }
+    .webinar .inscribete {
+      width: 90% !important;
+    }
+    .webinar .row {
+      display: flow-root !important;
+    }
+    .webinar .row .col {
+      padding-bottom: 30px !important;
+    }
+
+    .include {
+      width: 440px !important;
+    }
+    .include .row {
+      display: flow-root !important;
+    }
+    .include .row .col {
+      padding-bottom: 30px !important;
+    }
+
+    .contact {
+      width: 440px !important;
+    }
+    .contact .logo {
+      width: 390px !important;
+    }
+    .contact .alan {
+      width: 100% !important; 
+      float: right;
+    }
+
+    .b-avatar {
+      width: 12rem !important;
+      height: 12rem !important;
+    }
+}
+
+
 .simplifica .portada {
   width: 1024px;
 }
+.simplifica .block {
+  padding-top: 150px;
+}
+
 .prioridades {
   background-image: url("./../assets/img/portada.png");
   background-repeat: no-repeat;
   color: #ffffff;
+  padding-top: 100px;
   padding-bottom: 80px;
 }
 .prioridades .circles {
@@ -246,6 +335,16 @@ export default {
 }
 .prioridades .footerCircle {
   padding-top: 60px;
+}
+.prioridades .title {
+  font-size: 40px;
+}
+.prioridades .subtitle {
+  font-size: 35px;
+}
+.webinar .block {
+  padding-top: 70px; 
+  padding-bottom:40px
 }
 .webinar .inscribete {
   width: 30%;
@@ -293,6 +392,10 @@ export default {
   background-color: #000000;
   border-color: #000000;
 }
+
+.contact {
+  padding-bottom: 10px;
+}
 .contact .title {
   text-align: left;
   color: rgb(35, 177, 186);
@@ -302,6 +405,10 @@ export default {
 .contact .logo {
   width: 373px;
 }
+.contact .alan {
+  width: 130%; 
+  float: right;
+} 
 .contact .subtitle {
   text-align: left;
   color: #000000;
