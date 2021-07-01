@@ -96,8 +96,8 @@
                                 <div style="font-size: 17px; padding-bottom: 10px;"> <strong>Desglose</strong> </div>
                                 <div>
                                     1 Pago <code>$1713.00</code>  IVA 16% = <code>$1987.08</code> <br>
-                                    2 pagos <code>$942.12</code> IVA 16% = <code>$1092.8592</code> x 2 MSI <br>
-                                    3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 MSI <br>
+                                    2 pagos <code>$942.12</code> IVA 16% = <code>$1092.85</code> x 2 MSI <br>
+                                    // 3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 MSI <br>
                                 </div>
                             </div>
 
@@ -126,14 +126,15 @@
 
                 <template :ref="props.reset()" slot="footer" slot-scope="props">
                     <div class=wizard-footer-left>
-                        <wizard-button  
-                            v-if="props.activeTabIndex > 0 && !props.isLastStep" 
+                        <wizard-button
+                            @click.native="onComplete()"
                             :style="props.fillButtonStyle">
-                                Anterior
+                                Cerrar
                         </wizard-button>
                     </div>
 
                     <div class="wizard-footer-right">
+            
                         <wizard-button 
                             v-if="!props.isLastStep" 
                             @click.native="validateForm(props)"
@@ -145,12 +146,30 @@
                         <wizard-button 
                             v-else 
                             @click.native="onComplete()" 
-                            class="wizard-footer-right finish-button" 
-                            :style="props.fillButtonStyle">
-                                {{props.isLastStep ? 'Comprar' : 'Siguiente'}}
+                            class="wizard-footer-right finish-button" >
+
+                                <div v-if="props.isLastStep">
+                                    <!-- Este pago es para hacer los test -->
+                                    <div v-show="selected==='pago1'">
+                                        Pending
+                                    </div>
+                                    <div v-show="selected==='pago2'">
+                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                            <input type="hidden" name="hosted_button_id" value="MCNZPVWRS4QD2">
+                                            <input type="image" 
+                                                src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_subscribeCC_LG.gif" 
+                                                border="0" 
+                                                name="submit" 
+                                                alt="PayPal, la forma mÃ¡s segura y rÃ¡pida de pagar en lÃ&shy;nea.">    
+                                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                                
                         </wizard-button>
                     </div>
-                    
                 </template>
 
             </form-wizard>
@@ -161,7 +180,7 @@
 </template>
 
 <script>
-// import correo from '../services/correos.js'
+import correo from '../services/correos.js'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
@@ -193,12 +212,18 @@ export default {
     async onComplete () {
         this.showModall = false
     },
+    async back (prop) {
+        prop.prevTab()
+    },
+    async next (prop) {
+        prop.nextTab()
+    },
     async validateForm (prop) {
         this.$validator.validateAll().then((result) => {
             if(result) {
                 this.saveData() // Firebase
-                // var sendMail = correo.apartado() // SendGrid
-                // console.log('correo: ', sendMail)
+                var sendMail = correo.apartado() // SendGrid
+                console.log('correo: ', sendMail)
                 prop.nextTab()
                 return
             }
@@ -221,11 +246,11 @@ export default {
             email: null,
             telephone: null,
           },
-          selected: 'first',
+          selected: 'pago1',
           options: [
-            { text: 'Pago Contado:         $1,987.08' , value: 'first' },
-            { text: 'Pago Cargo 2 MSI:   $1,092.85',  value: 'second' },
-            { text: 'Pago Cargo 3 MSI:   $808.58',    value: 'third' }
+            { text: 'Pago Contado:       $1,987.08' , value: 'pago1' },
+            { text: 'Pago Cargo 2 MSI:   $1,092.85',  value: 'pago2' },
+            // { text: 'Pago Cargo 3 MSI:   $808.58',    value: 'pago3' }
           ]
       }
   }

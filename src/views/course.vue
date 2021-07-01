@@ -137,7 +137,18 @@ export default {
 </script>
 
 <style scoped>
-
+@media (max-width:850px) and (orientation : landscape) {
+  .course {
+    padding-top: 100px !important;
+    width: 850px !important;
+  }
+  .course .inscribete {
+    width: 90% !important;
+  }
+  .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    padding-right: 35px;
+  }
+}
 @media (max-width:768px) and (orientation : portrait) {
   .course {
     padding-top: 100px !important;

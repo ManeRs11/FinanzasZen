@@ -7,7 +7,7 @@ export default {
             headers: {
                 'Authorization': 'Bearer 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',
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'https://api.sendgrid.com',
                 'Allow': 'POST, HEAD'
             }
         })

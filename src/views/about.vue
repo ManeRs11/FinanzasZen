@@ -387,6 +387,16 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width:850px) and (orientation : landscape) {
+  .about {
+    padding-top: 140px;
+    padding-bottom: 40px;
+    width: 850px !important;
+  }  
+  .about .row {
+    display: block !important;
+  }
+}
 @media (max-width:768px) and (orientation : portrait) {
   .about {
     padding-top: 140px;

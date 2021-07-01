@@ -234,6 +234,100 @@ export default {
 <style scoped>
 
 
+@media (max-width:850px) and (orientation : landscape) {
+
+    .simplifica .portada {
+      padding: 0px 0px 0px 30px !important;
+      width: 600px !important;
+      padding-bottom: 30px !important;
+    }
+
+    .prioridades {
+      background-image: url("./../assets/img/portada.png");
+      background-repeat: no-repeat;
+      color: #ffffff;
+      padding-top: 30px !important;
+      padding-bottom: 0px !important;
+      width: 850px !important;
+    }
+    .prioridades .circles {
+      padding-top: 10px !important;
+      padding-bottom: 30px !important;
+    }
+    .prioridades .title {
+      font-size: 21px !important;
+    }
+    .prioridades .subtitle {
+      font-size: 20px !important;
+    }
+    .prioridades .footerCircle {
+      padding-top: 30px !important;
+    }
+
+    .webinar {
+      width: 850px !important;
+    }
+    .webinar .block {
+      padding-top: 40px !important; 
+      padding-bottom: 40px !important;
+    }
+    .webinar .title {
+      font-size: 20px !important;
+    }
+    .webinar .inscribete {
+      width: 90% !important;
+    }
+    .webinar .row {
+      display: flow-root !important;
+    }
+    .webinar .row .col {
+      padding-bottom: 30px !important;
+    }
+
+
+    .include {
+      width: 850px !important;
+    }
+    .include .row {
+      display: flow-root !important;
+    }
+    .include .row .col {
+      padding-bottom: 30px !important;
+    }
+    .include .info {
+      padding: 70px !important;
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+    }
+    .include .ebook {
+      padding-top: 15px !important;
+    }
+
+
+    .contact {
+      width: 850px !important;
+    }
+    .contact .block {
+      padding: 50px !important;
+      padding-top: 20px !important;
+      padding-bottom: 30px !important;
+    }
+    .contact .logo {
+      width: 320px !important;
+    }
+    .contact .alan {
+      padding-top: 200px !important;
+      width: 100% !important; 
+      float: right;
+    }
+
+
+    .b-avatar {
+      width: 10rem !important;
+      height: 10rem !important;
+    }
+}
+
 @media (max-width:768px) and (orientation : portrait) {
     .simplifica .portada {
       padding: 0px 0px 0px 30px !important;
@@ -266,7 +360,6 @@ export default {
       padding-top: 30px !important;
     }
 
-
     
     .webinar {
       width: 440px !important;
@@ -288,6 +381,7 @@ export default {
       padding-bottom: 30px !important;
     }
 
+
     .include {
       width: 440px !important;
     }
@@ -305,6 +399,7 @@ export default {
     .include .ebook {
       padding-top: 15px !important;
     }
+
 
     .contact {
       width: 440px !important;

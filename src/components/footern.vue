@@ -39,6 +39,17 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width:850px) and (orientation : landscape) {
+  .footer {
+      width: 850px !important;
+  }
+  .footer ul {
+      width: 40% !important;
+  }
+  .footer .derechos {
+    font-size: 15px !important;
+  }
+}
 
 @media (max-width:768px) and (orientation : portrait) {
   .footer {
@@ -49,7 +60,7 @@ export default {
   }
   .footer .derechos {
     font-size: 11px !important;
-}
+  }
 }
 
 

@@ -36,6 +36,15 @@ export default {
 
 <style scoped>
 
+@media (max-width:850px) and (orientation : landscape) {
+  .logo {
+    width: 170px !important;
+  }
+  .form-inline {
+    display: block !important;
+  }
+}
+
 @media (max-width:768px) and (orientation : portrait) {
   .logo {
     width: 140px !important;

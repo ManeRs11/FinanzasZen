@@ -35,6 +35,9 @@ import VueMomentJS from "vue-momentjs";
 import VueLodash from 'vue-lodash'
 import lodash from 'lodash'
 
+// CORS
+import cors from 'cors'
+
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
@@ -44,10 +47,10 @@ Vue.use(VueFormWizard)
 Vue.use(VueAxios, axios)
 Vue.use(VeeValidate)
 Vue.use(firebase)
+Vue.use(cors)
 Vue.use(firestorePlugin)
-Vue.use(VueMomentJS, moment);
+Vue.use(VueMomentJS, moment)
 Vue.use(VueLodash, {lodash: lodash})
-
 
 Vue.config.productionTip = false
 
