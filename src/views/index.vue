@@ -113,7 +113,7 @@
         </div>
 
         <div class="ebook">
-          <b-button style="padding:30px;" class="rounded-pill" variant="dark" size="lg"> <strong>E-BOOK</strong> <br> ! Descarga Gratuita ¡</b-button>
+          <b-button target="_blank" href="https://drive.google.com/file/d/1veqnlxbpG8bskvptr2v6wP6BzESBM64D/view?ts=60dcf182" style="padding:30px;" class="rounded-pill" variant="dark" size="lg"> <strong>E-BOOK</strong> <br> ! Descarga Gratuita ¡</b-button>
         </div>
       </div>
 
@@ -234,7 +234,7 @@ export default {
 <style scoped>
 
 
-@media (max-width:850px) and (orientation : landscape) {
+@media (max-width:991px) and (orientation : landscape) {
 
     .simplifica .portada {
       padding: 0px 0px 0px 30px !important;
@@ -422,7 +422,6 @@ export default {
       height: 12rem !important;
     }
 }
-
 
 .simplifica .portada {
   width: 1024px;

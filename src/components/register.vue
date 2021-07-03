@@ -97,7 +97,7 @@
                                 <div>
                                     1 Pago <code>$1713.00</code>  IVA 16% = <code>$1987.08</code> <br>
                                     2 pagos <code>$942.12</code> IVA 16% = <code>$1092.85</code> x 2 MSI <br>
-                                    // 3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 MSI <br>
+                                    <!-- 3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 MSI <br> -->
                                 </div>
                             </div>
 
@@ -151,7 +151,7 @@
                                 <div v-if="props.isLastStep">
                                     <!-- Este pago es para hacer los test -->
                                     <div v-show="selected==='pago1'">
-                                        Pending
+                                        Pendings
                                     </div>
                                     <div v-show="selected==='pago2'">
                                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -180,22 +180,8 @@
 </template>
 
 <script>
-import correo from '../services/correos.js'
+// import correo from '../services/correos.js'
 import firebase from 'firebase/app'
-import 'firebase/firestore'
-
-var firebaseConfig = {
-  apiKey: "AIzaSyDfWqGcyBNZYOfXZusWpTifwWvEGMau944",
-  authDomain: "finanzaszen-e2129.firebaseapp.com",
-  databaseURL: "https://finanzaszen-e2129-default-rtdb.firebaseio.com",
-  projectId: "finanzaszen-e2129",
-  storageBucket: "finanzaszen-e2129.appspot.com",
-  messagingSenderId: "652871503783",
-  appId: "1:652871503783:web:065da82fd754e352107082",
-  measurementId: "G-MB6PK41ME8"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore()
 
 export default {
   name: 'register',
@@ -204,10 +190,12 @@ export default {
       this.init()
   },
   firestore: {
-      registro: db.collection('Registro')
+      // registro: db.collection('Registro')
   },
   methods: {
     async init () {
+        this.db = firebase.firestore()
+        console.log('firebase:', this.db )
     },
     async onComplete () {
         this.showModall = false
@@ -222,24 +210,25 @@ export default {
         this.$validator.validateAll().then((result) => {
             if(result) {
                 this.saveData() // Firebase
-                var sendMail = correo.apartado() // SendGrid
-                console.log('correo: ', sendMail)
+                // var sendMail = correo.apartado() // SendGrid
+                // console.log('correo: ', sendMail)
                 prop.nextTab()
                 return
             }
         })
     },
     async saveData () {
-        db.collection('Registro').add({
+        this.db.collection('Registro').add({
             Nombre: this.form.nombre,
             Email: this.form.email,
-            Telephone: this.form.telephone,
-            Register: this.$moment().format('LLLL')
+            Telefono: this.form.telephone,
+            Registro: this.$moment().format('LLLL')
         })
     }
   },
   data: function () {
       return {
+          db: {},
           showModall: this.modal,
           form: {
             nombre: null,

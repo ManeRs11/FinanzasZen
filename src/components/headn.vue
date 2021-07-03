@@ -4,7 +4,7 @@
       <div>
         <b-navbar fixed="top" toggleable="lg" type="info" variant="info" class="border-bottom">
           <div class="container">
-            <b-navbar-brand href="#">
+            <b-navbar-brand href="/">
               <img src="./../assets/logos/FinanzazZenLogo.png" class="logo" alt="">
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -13,9 +13,9 @@
                 <b-nav-form>
 
                   <b-nav-item><router-link to="/"><strong>Inicio</strong></router-link></b-nav-item>
-                  <b-nav-item><router-link to="/about"><strong>¿Que es Finanzas Zen?</strong></router-link></b-nav-item>
                   <b-nav-item><router-link to="/course"><strong>Temario</strong></router-link></b-nav-item>
-                  <!-- b-nav-item><router-link to="/blog"><strong>Blog</strong></router-link></b-nav-item -->
+                  <b-nav-item><router-link to="/about"><strong>¿Que es Finanzas Zen?</strong></router-link></b-nav-item>
+                  
                   
                 </b-nav-form>
               </b-navbar-nav>

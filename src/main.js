@@ -38,7 +38,6 @@ import lodash from 'lodash'
 // CORS
 import cors from 'cors'
 
-
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
@@ -54,7 +53,21 @@ Vue.use(VueLodash, {lodash: lodash})
 
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+let firebaseConfig = {
+  apiKey: "AIzaSyDfWqGcyBNZYOfXZusWpTifwWvEGMau944",
+  authDomain: "finanzaszen-e2129.firebaseapp.com",
+  databaseURL: "https://finanzaszen-e2129-default-rtdb.firebaseio.com",
+  projectId: "finanzaszen-e2129",
+  storageBucket: "finanzaszen-e2129.appspot.com",
+  messagingSenderId: "652871503783",
+  appId: "1:652871503783:web:065da82fd754e352107082",
+  measurementId: "G-MB6PK41ME8"
+};
+firebase.initializeApp(firebaseConfig);
+firebase.auth().onAuthStateChanged(function (user){
+    console.log('user: ', user)
+    new Vue({
+      router,
+      render: h => h(App)
+    }).$mount('#app')
+})
