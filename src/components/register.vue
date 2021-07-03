@@ -57,6 +57,18 @@
                                 <div class="mt-2"><span style="color: red;">*</span> WhatsApp: <span style="color: #e83e8c">{{ form.telephone }}</span> </div>
                             </div>
 
+                            <div style="padding-bottom: 20px;">
+                                <span v-show="errors.has('verifica')" class="is-invalid">El captcha es requerido *</span>
+                                <vue-recaptcha name="verifica" 
+                                    ref="recaptcha"
+                                    @verify="onVerify()"
+                                    sitekey="6LeuZVEbAAAAABOx-FxWVJj_utfd1H0iJhUQPW4M" 
+                                    :loadRecaptchaScript="true">
+                                </vue-recaptcha>
+                            </div>
+
+                              
+
                         </form>
 
                     <span style="font-weight: bold;">Tus datos privados son utilizados únicamente para enviarte información de valor y apoyarte en caso de dudas.</span>
@@ -139,6 +151,7 @@
                             v-if="!props.isLastStep" 
                             @click.native="validateForm(props)"
                             class="wizard-footer-right" 
+                            :disabled="disabled"
                             :style="props.fillButtonStyle">
                                 Siguiente
                         </wizard-button>
@@ -181,6 +194,7 @@
 
 <script>
 // import correo from '../services/correos.js'
+import VueRecaptcha from 'vue-recaptcha';
 import firebase from 'firebase/app'
 
 export default {
@@ -189,10 +203,24 @@ export default {
   mounted () {
       this.init()
   },
-  firestore: {
-      // registro: db.collection('Registro')
+  components: {
+    VueRecaptcha
   },
   methods: {
+    async onSubmit () {
+      this.$refs.invisibleRecaptcha.execute()
+    },
+    async onVerify () {
+        this.$validator.validateAll().then((result) => {
+            if(result) {
+                this.disabled = false
+                return
+            } else {
+                this.$refs.recaptcha.reset();
+            }
+        })
+      console.log('estoy verificando: ')
+    },
     async init () {
         this.db = firebase.firestore()
         console.log('firebase:', this.db )
@@ -228,6 +256,7 @@ export default {
   },
   data: function () {
       return {
+          disabled: true,
           db: {},
           showModall: this.modal,
           form: {
