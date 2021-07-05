@@ -137,9 +137,11 @@
                 </tab-content>
 
                 <template :ref="props.reset()" slot="footer" slot-scope="props">
+                    
                     <div class=wizard-footer-left>
-                        <wizard-button
-                            @click.native="onComplete()"
+                        <wizard-button 
+                            @click.native="onComplete()" 
+                            class="wizard-footer-left finish-button"
                             :style="props.fillButtonStyle">
                                 Cerrar
                         </wizard-button>
@@ -224,7 +226,7 @@ export default {
         this.db = firebase.firestore()
     },
     async onComplete () {
-        // this.showModall = false
+        this.showModall = false
     },
     async back (prop) {
         prop.prevTab()

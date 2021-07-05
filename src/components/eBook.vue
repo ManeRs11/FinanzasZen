@@ -56,7 +56,7 @@
 
                             <div style="padding-bottom: 20px;">
                                 <span v-show="errors.has('verifica')" class="is-invalid">El captcha es requerido *</span>
-                                <vue-recaptcha name="verifica" style="padding-left: 420px"
+                                <vue-recaptcha name="verifica" class="verifica"
                                     ref="recaptcha"
                                     @verify="onVerify()"
                                     sitekey="6LeuZVEbAAAAABOx-FxWVJj_utfd1H0iJhUQPW4M" 
@@ -75,9 +75,11 @@
 
 
                 <template :ref="props.reset()" slot="footer" slot-scope="props">
+                    
                     <div class=wizard-footer-left>
-                        <wizard-button
-                            @click.native="onComplete()"
+                        <wizard-button 
+                            @click.native="onComplete()" 
+                            class="wizard-footer-left finish-button"
                             :style="props.fillButtonStyle">
                                 Cerrar
                         </wizard-button>
@@ -99,11 +101,9 @@
                             @click.native="onComplete()" 
                             class="wizard-footer-right finish-button"
                             :style="props.fillButtonStyle">
-
                                 <div v-if="props.isLastStep">
                                     Terminar
                                 </div>
-                                
                         </wizard-button>
                     </div>
                 </template>
@@ -178,6 +178,17 @@ export default {
 </script>
 
 <style scoped>  
+@media (max-width:991px) and (orientation : landscape) {
+    .verifica {
+        padding-left: 0px !important;
+    }
+}
+@media (max-width:768px) and (orientation : portrait) {
+    .verifica {
+        padding-left: 0px !important;
+    }
+}
+
 .eBook {
     padding-top: 170px;
     padding-bottom:50px
@@ -189,5 +200,8 @@ export default {
 }
 .is-invalid {
     color: red;
+}
+.verifica {
+  padding-left: 420px;
 }
 </style>
