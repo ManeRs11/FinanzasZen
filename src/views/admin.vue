@@ -29,8 +29,24 @@
                     <h2>Apartados</h2>
                     <th/>
                   </div>
+
+                  <div>
+                    <b-tabs content-class="mt-3">
+                      
+                      <b-tab title="Apartado" active>
+                        <b-table striped hover :items="registro"></b-table>    
+                      </b-tab>
+                      
+                      <b-tab title="eBook">
+                        <b-table striped hover :items="ebook"></b-table>    
+                      </b-tab>
+                      
+                      <!-- b-tab title="vacio" disabled><p>I'm a disabled tab!</p></b-tab -->
+                    
+                    </b-tabs>
+                  </div>
                   
-                    <b-table striped hover :items="registro"></b-table>
+                    
                 </div>
               </b-col>            
           </b-row>
@@ -49,11 +65,13 @@ export default {
   data: function () {
     return {
       db: {},
-      registro: {}
+      registro: {},
+      ebook: {}
     }
   },
   firestore: {
-      registro: db.collection('Registro')
+      registro: db.collection('Registro'),
+      ebook: db.collection('ebook')
   },
   mounted () {
     this.init()

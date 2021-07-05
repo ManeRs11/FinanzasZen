@@ -59,7 +59,7 @@
 
                             <div style="padding-bottom: 20px;">
                                 <span v-show="errors.has('verifica')" class="is-invalid">El captcha es requerido *</span>
-                                <vue-recaptcha name="verifica" 
+                                <vue-recaptcha name="verifica" class="verifica"
                                     ref="recaptcha"
                                     @verify="onVerify()"
                                     sitekey="6LeuZVEbAAAAABOx-FxWVJj_utfd1H0iJhUQPW4M" 
@@ -167,7 +167,7 @@
                                         Pendings
                                     </div>
                                     <div v-show="selected==='pago2'">
-                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <form @click="updateData(2)" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                             <input type="hidden" name="cmd" value="_s-xclick">
                                             <input type="hidden" name="hosted_button_id" value="MCNZPVWRS4QD2">
                                             <input type="image" 
@@ -219,14 +219,12 @@ export default {
                 this.$refs.recaptcha.reset();
             }
         })
-      console.log('estoy verificando: ')
     },
     async init () {
         this.db = firebase.firestore()
-        console.log('firebase:', this.db )
     },
     async onComplete () {
-        this.showModall = false
+        // this.showModall = false
     },
     async back (prop) {
         prop.prevTab()
@@ -239,23 +237,32 @@ export default {
             if(result) {
                 this.saveData() // Firebase
                 // var sendMail = correo.apartado() // SendGrid
-                // console.log('correo: ', sendMail)
                 prop.nextTab()
                 return
             }
         })
+    },
+    async updateData ( opcPago ) {
+        var docRef =  this.db.collection("Registro").doc(this.idRegister)
+        docRef.update({
+            OpcionPago: opcPago
+        });
     },
     async saveData () {
         this.db.collection('Registro').add({
             Nombre: this.form.nombre,
             Email: this.form.email,
             Telefono: this.form.telephone,
-            Registro: this.$moment().format('LLLL')
+            Registro: this.$moment().format('LLLL'),
+            OpcionPago: -1
+        }).then((result) => {
+            this.idRegister = result.id
         })
     }
   },
   data: function () {
       return {
+          idRegister: '',
           disabled: true,
           db: {},
           showModall: this.modal,
@@ -277,11 +284,24 @@ export default {
 
 <style scoped>
 
+@media (max-width:991px) and (orientation : landscape) {
+    .verifica {
+        padding-left: 0px !important;
+    }
+}
+@media (max-width:768px) and (orientation : portrait) {
+    .verifica {
+        padding-left: 0px !important;
+    }
+}
+
 .notFound {
   padding-top: 140px;
   padding-bottom: 40px;
 }
-
+.verifica {
+  padding-left: 420px;
+}
 .squareSeq {
     margin: 10px;
     font-weight: lighter;

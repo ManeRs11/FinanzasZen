@@ -65,7 +65,7 @@ let firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function (user){
-    console.log('user: ', user)
+    console.log('', user)
     new Vue({
       router,
       render: h => h(App)

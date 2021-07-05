@@ -4,8 +4,7 @@
       <div class="container">
           <b-row>
             <b-col>
-              </b-col>
-              <b-col>
+              
                 <b-card
                     title="Login Admins"
                     img-src="https://firebasestorage.googleapis.com/v0/b/finanzaszen-e2129.appspot.com/o/waves.jpeg?alt=media&token=ca602e9f-3454-4fcc-bf4c-b170c3bc7e4a"
@@ -31,9 +30,8 @@
                     <b-button @click="login()" variant="info">Acceder</b-button>
                     <p>{{error}}</p>
                 </b-card>
-              </b-col>
-              <b-col>
-              </b-col>
+            
+            </b-col>  
           </b-row>
         
 

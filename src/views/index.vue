@@ -112,8 +112,15 @@
 
         </div>
 
+        
+
         <div class="ebook">
-          <b-button target="_blank" href="https://drive.google.com/file/d/1veqnlxbpG8bskvptr2v6wP6BzESBM64D/view?ts=60dcf182" style="padding:30px;" class="rounded-pill" variant="dark" size="lg"> <strong>E-BOOK</strong> <br> ! Descarga Gratuita ¡</b-button>
+          <b-button class="rounded-pill btn-dark" variant="primary" size="lg" @click="showModalBK()">
+          <strong>
+            <strong>E-BOOK</strong> <br> ! Descarga Gratuita ¡
+          </strong>
+        </b-button>
+          <!-- b-button target="_blank" href="https://drive.google.com/file/d/1veqnlxbpG8bskvptr2v6wP6BzESBM64D/view?ts=60dcf182" style="padding:30px;" class="rounded-pill" variant="dark" size="lg"> <strong>E-BOOK</strong> <br> ! Descarga Gratuita ¡</b-button -->
         </div>
       </div>
 
@@ -194,16 +201,22 @@
     <div v-if="modalSh" class="floatModals">
       <register v-bind:modal="modalSh" />
     </div>
+
+    <div v-if="modalBk" class="floatModals">
+      <ebook v-bind:modalbook="modalBk" />
+    </div>
+
   </div>
 </template>
 
 <script>
-
+import ebook from '../components/eBook.vue'
 import register from '../components/register.vue'
 export default {
   name: 'index',
   components: {
-    register
+    register,
+    ebook
   },
   methods: {
     async showModal () {
@@ -216,10 +229,22 @@ export default {
     },
     async hideModal () {
       this.modalSh = false
+    },
+    async showModalBK () {
+      if (!this.modalBk) {
+        this.modalBk = true
+      } else {
+        this.modalBk = await false
+        this.modalBk = await true
+      }
+    },
+    async hideModalBK () {
+      this.modalBk = false
     }
   },
   data: function () {
     return {
+      modalBk: false,
       modalSh: false,
       whatsappNum: '+5214423475712',
       whatsappNumParse: '+52 1 (442) 347 5712',
@@ -498,6 +523,7 @@ export default {
   color: #fff;
   background-color: #000000;
   border-color: #000000;
+  padding: 30px;
 }
 
 .contact {
