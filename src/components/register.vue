@@ -166,8 +166,14 @@
                                 <div v-if="props.isLastStep">
                                     <!-- Este pago es para hacer los test -->
                                     <div v-show="selected==='pago1'">
-                                        Pendings
+                                        <form @click="updateData(1)" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                            <input type="hidden" name="hosted_button_id" value="D8SYV7ZFZHNDL">
+                                            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                                        </form>
                                     </div>
+
                                     <div v-show="selected==='pago2'">
                                         <form @click="updateData(2)" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                             <input type="hidden" name="cmd" value="_s-xclick">
@@ -177,6 +183,15 @@
                                                 border="0" 
                                                 name="submit" 
                                                 alt="PayPal, la forma mÃ¡s segura y rÃ¡pida de pagar en lÃ&shy;nea.">    
+                                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                                        </form>
+                                    </div>
+
+                                    <div v-show="selected==='pago3'">
+                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                            <input type="hidden" name="hosted_button_id" value="J9ZEKS3YVWEAW">
+                                            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
                                             <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
                                         </form>
                                     </div>
@@ -277,7 +292,7 @@ export default {
           options: [
             { text: 'Pago Contado:       $1,987.08' , value: 'pago1' },
             { text: 'Pago Cargo 2 MSI:   $1,092.85',  value: 'pago2' },
-            // { text: 'Pago Cargo 3 MSI:   $808.58',    value: 'pago3' }
+            { text: 'Pago TEST:          $10.00',     value: 'pago3' }
           ]
       }
   }

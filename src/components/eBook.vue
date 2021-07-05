@@ -25,6 +25,20 @@
                         Asegúrate de revisar la bandeja de SPAM para recibir el E-Book gratuito. Te deseo un próspero y abundante día.
                     </div>
                         <form>
+
+                            <div style="padding-bottom: 20px;">
+                                <span v-show="errors.has('nombre')" class="is-invalid">El nombre es requerido *</span>
+                                <input 
+                                    name="nombre" 
+                                    placeholder="Ingresa tu nombre completo" 
+                                    v-model="form.nombre"
+                                    v-validate="'required'" type="nombre"
+                                    class="form-control form-control-sm"
+                                    :class="{
+                                        'is-invalid': errors.has('nombre')
+                                    }">
+                                <div class="mt-2"><span style="color: red;">*</span> Correo: <span style="color: #e83e8c">{{ form.email }}</span> </div>
+                            </div>
                             
                             <div style="padding-bottom: 20px;">
                                 <span v-show="errors.has('email')" class="is-invalid">El email es requerido *</span>
@@ -69,7 +83,13 @@
 
                 <tab-content title="Gracias">
                     <div class="msgEbook">
-                        <h4><span style="color:#11a199; font-size: 33px;">¡ GRACIAS !</span> <br> Te enviamos el eBook a tu correo</h4>
+                        <h4>
+                            <span style="color:#11a199; font-size: 33px;">¡ GRACIAS !</span><br><br> 
+                            <a class="btn btn-sm btn-dark rounded-pill" style="padding:30px;" target="_blank" 
+                            href="https://drive.google.com/file/d/1veqnlxbpG8bskvptr2v6wP6BzESBM64D/view?ts=60dcf182">
+                                    Descarga tu E-Book
+                            </a> 
+                        </h4>
                     </div>
                 </tab-content>
 
@@ -129,7 +149,8 @@ export default {
       showModallBook: this.modalbook,
       form: {
           nombre: '',
-          email: ''
+          email: '',
+          telephone: ''
       }
     }
   },
@@ -158,6 +179,7 @@ export default {
     },
     async saveData () {
         this.db.collection('ebook').add({
+            Nombre: this.form.nombre,
             Correo: this.form.email,
             Telefono: this.form.telephone,
             Registro: this.$moment().format('LLLL')
