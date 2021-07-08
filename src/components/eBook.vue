@@ -37,7 +37,7 @@
                                     :class="{
                                         'is-invalid': errors.has('nombre')
                                     }">
-                                <div class="mt-2"><span style="color: red;">*</span> Correo: <span style="color: #e83e8c">{{ form.email }}</span> </div>
+                                <div class="mt-2"><span style="color: red;">*</span> Nombre: <span style="color: #e83e8c">{{ form.nombre }}</span> </div>
                             </div>
                             
                             <div style="padding-bottom: 20px;">

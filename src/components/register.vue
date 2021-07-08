@@ -2,6 +2,8 @@
   <div class="register">
     <b-modal size="lg" ref="modal" id="modal" v-model="showModall" data-backdrop=”static” data-keyboard=”false” tabindex=”-1″ hide-footer hide-header>
         <div style="padding-top: 20px;">
+
+            <pre>{{config}}</pre>
             
             <form-wizard ref="wizard"
                 :start-index="0"
@@ -109,7 +111,6 @@
                                 <div>
                                     1 Pago <code>$1713.00</code>  IVA 16% = <code>$1987.08</code> <br>
                                     2 pagos <code>$942.12</code> IVA 16% = <code>$1092.85</code> x 2 MSI <br>
-                                    <!-- 3 Pagos <code>$697.05</code> IVA 16% = <code>$808.58</code> x 3 MSI <br> -->
                                 </div>
                             </div>
 
@@ -279,6 +280,7 @@ export default {
   },
   data: function () {
       return {
+          config: {},
           idRegister: '',
           disabled: true,
           db: {},
@@ -291,8 +293,7 @@ export default {
           selected: 'pago1',
           options: [
             { text: 'Pago Contado:       $1,987.08' , value: 'pago1' },
-            { text: 'Pago Cargo 2 MSI:   $1,092.85',  value: 'pago2' },
-            { text: 'Pago TEST:          $10.00',     value: 'pago3' }
+            { text: 'Pago Cargo 2 MSI:   $1,092.85',  value: 'pago2' }
           ]
       }
   }
