@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Config from './../config.json'
 
 // Wizzard Vue 
 import VueFormWizard from 'vue-form-wizard'
@@ -54,18 +55,20 @@ Vue.use(VueLodash, {lodash: lodash})
 Vue.config.productionTip = false
 
 let firebaseConfig = {
-  apiKey: "AIzaSyDfWqGcyBNZYOfXZusWpTifwWvEGMau944",
-  authDomain: "finanzaszen-e2129.firebaseapp.com",
-  databaseURL: "https://finanzaszen-e2129-default-rtdb.firebaseio.com",
-  projectId: "finanzaszen-e2129",
-  storageBucket: "finanzaszen-e2129.appspot.com",
-  messagingSenderId: "652871503783",
-  appId: "1:652871503783:web:065da82fd754e352107082",
-  measurementId: "G-MB6PK41ME8"
+  apiKey: Config.apiKey,
+  authDomain: Config.authDomain,
+  databaseURL: Config.databaseURL,
+  projectId: Config.projectId,
+  storageBucket: Config.storageBucket,
+  messagingSenderId: Config.messagingSenderId,
+  appId: Config.appId,
+  measurementId: Config.measurementId
 };
 firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function (user){
-    console.log('', user)
+  console.log('', user)
+  console.clear()
+  console.log('Bienvenido a FinanzasZen')
     new Vue({
       router,
       render: h => h(App)
